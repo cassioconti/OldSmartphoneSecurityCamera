@@ -1,5 +1,7 @@
 package com.github.cassioconti.oldsmartphonesecuritycamera;
 
+import android.content.Context;
+import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -26,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        CameraUtils.getCamera(this.getBaseContext());
     }
 
     @Override
